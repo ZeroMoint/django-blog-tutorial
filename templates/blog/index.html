@@ -4,9 +4,9 @@
 
     {% for post in post_list %}
         <article class="post post-{{ post.pk }}">
-            <div class="tm-purple-bg tm-box-pad tm-bordered-box tm-no-border-top">
+            <div class="tm-welcome-box">
             <header class="entry-header">
-                <a href="{{ post.get_absolute_url }} class="tm-nav-item-link tm-button"">{{ post.title }}</a>
+                <h2 class="tm-section-title">{{post.title}}</h2>
                 <div class="entry-meta">
                     <span class="post-category"><a href="{% url 'blog:category' post.category.pk %}">{{ post.category.name }}</a></span>
                     <span class="post-date"><a href="{% url 'blog:archives' post.created_time.year post.created_time.month %}"><time class="entry-date"
