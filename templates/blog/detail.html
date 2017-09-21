@@ -12,11 +12,11 @@
       <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
     </div>
   </header>
-  <div class="entry-content clearfix">
-    <p style='color:#C10066'>{{ post.body|safe }}</p>
+  <div class="entry-content clearfix" >
+    <span style='color:#C10066'>{{ post.body|safe }}</span>
     <div class="widget-tag-cloud">
                 <ul>
-                    标签：
+                    <span style='color:#C10066'>标签：</span>
                     {% for tag in post.tags.all %}
                         <li><a href="{% url 'blog:tag' tag.pk %}"># {{ tag.name }}</a></li>
                     {% endfor %}
@@ -62,7 +62,7 @@
           </div>
         </li>
         {% empty %}
-        暂无评论
+        <span style='color:#C10066'>暂无评论</span>
         {% endfor %}
       </ul>
                     </div>
