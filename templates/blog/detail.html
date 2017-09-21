@@ -26,7 +26,7 @@
 </article>
                 <section class="comment-area" id="comment-area">
                     <hr>
-                    <h3>发表评论</h3>
+                    <h3 style='color:#C10066'>发表评论</h3>
                     
                     <form action="{% url 'comments:post_comment' post.pk %}" method="post" class="comment-form">
   {% csrf_token %}
