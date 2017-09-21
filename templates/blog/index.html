@@ -6,7 +6,7 @@
         <article class="post post-{{ post.pk }}">
             <header class="entry-header">
                 <h1 class="entry-title">
-                    <a href="{{ post.get_absolute_url }}"><h4 class="tm-banner-title">{{ post.title }}</h4></a>
+                    <a href="{{ post.get_absolute_url }}"><h6 class="tm-banner-title">{{ post.title }}</h6></a>
                 </h1>
                 <div class="entry-meta">
                     <span class="post-category"><a href="{% url 'blog:category' post.category.pk %}">{{ post.category.name }}</a></span>
