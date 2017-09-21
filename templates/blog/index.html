@@ -4,10 +4,9 @@
 
     {% for post in post_list %}
         <article class="post post-{{ post.pk }}">
+            <div class="tm-purple-bg tm-box-pad tm-bordered-box tm-no-border-top">
             <header class="entry-header">
-                <h1 class="entry-title"><div class="tm-purple-bg tm-box-pad tm-bordered-box tm-no-border-top">
-                                <a href="{{ post.get_absolute_url }}"><h2 class="tm-section-title">{{ post.title }}</h2></a>
-                </h1>
+                <a href="{{ post.get_absolute_url }}"><h2 class="tm-section-title">{{ post.title }}</h2></a>
                 <div class="entry-meta">
                     <span class="post-category"><a href="{% url 'blog:category' post.category.pk %}">{{ post.category.name }}</a></span>
                     <span class="post-date"><a href="{% url 'blog:archives' post.created_time.year post.created_time.month %}"><time class="entry-date"
@@ -16,13 +15,14 @@
                     <span class="comments-link"><a href="{{ post.get_absolute_url }}">{{ post.comment_set.count }} 评论</a></span>
                     <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
                 </div>
-                    </div>
+                    
             </header>
             <div class="entry-content clearfix">
                 <p>{{ post.excerpt }}...</p>
                 <div class="read-more cl-effect-14">
                     <a href="{{ post.get_absolute_url }}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
                 </div>
+            </div>
             </div>
         </article>
     {% empty %}
